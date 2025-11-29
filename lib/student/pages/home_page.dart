@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mahastudify_app/widgets/notification_bottom_sheet.dart';
 
 class StudentHomePage extends StatelessWidget {
   const StudentHomePage({super.key});
@@ -57,15 +58,22 @@ class StudentHomePage extends StatelessWidget {
                       Stack(
                         clipBehavior: Clip.none,
                         children: [
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.15),
-                              shape: BoxShape.circle,
-                            ),
-                            child: const Icon(
-                              Icons.notifications_none,
-                              color: Colors.white,
+                          // === ICON NOTIF BISA DI TAP ===
+                          InkWell(
+                            borderRadius: BorderRadius.circular(999),
+                            onTap: () {
+                              showNotificationBottomSheet(context);
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withOpacity(0.15),
+                                shape: BoxShape.circle,
+                              ),
+                              child: const Icon(
+                                Icons.notifications_none,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                           Positioned(

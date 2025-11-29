@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mahastudify_app/widgets/booking_bottom_sheet.dart';
 
 class SearchTutorPage extends StatelessWidget {
   const SearchTutorPage({super.key});
@@ -27,14 +28,17 @@ class SearchTutorPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // baris back + title (ikon back hanya dekorasi, tidak pop)
+                  // baris back + title
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
                       Align(
                         alignment: Alignment.centerLeft,
-                        child: Icon(Icons.arrow_back_ios,
-                            size: 18, color: Colors.white),
+                        child: Icon(
+                          Icons.arrow_back_ios,
+                          size: 18,
+                          color: Colors.white,
+                        ),
                       ),
                       SizedBox(width: 8),
                       Text(
@@ -380,7 +384,11 @@ class _TutorCard extends StatelessWidget {
                     elevation: 0,
                   ),
                   onPressed: () {
-                    // TODO: action booking
+                    // 👉 PANGGIL BOTTOM SHEET BOOKING DI SINI
+                    showBookingBottomSheet(
+                      context,
+                      tutorName: name,
+                    );
                   },
                   child: const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16),
